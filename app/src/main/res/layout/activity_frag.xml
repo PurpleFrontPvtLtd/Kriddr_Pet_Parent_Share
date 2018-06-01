@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll_post"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver_light"
+
+    android:paddingTop="10dp">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/rl_noFeeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txtNoFeeds1"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="        Please go to your "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtNoFeeds2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtNoFeeds1"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center_horizontal"
+
+                android:maxLines="1"
+                android:text="profile "
+                android:textColor="#0044ff"
+
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtNoFeeds5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtNoFeeds2"
+                android:fontFamily="@font/roboto_light"
+
+
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="and "
+
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtNoFeeds4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNoFeeds2"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="add your pets to create a new post"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardContr"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:paddingBottom="2dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="2dp">
+
+                <ImageView
+                    android:id="@+id/imgPrevPets"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/arrow_left" />
+
+                <ImageView
+                    android:id="@+id/imgNextPets"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/arrow_right" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:layout_toLeftOf="@+id/imgNextPets"
+                    android:layout_toRightOf="@id/imgPrevPets"
+                    android:gravity="center">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/imgPets"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+
+                        android:adjustViewBounds="true"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txtPetDispName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/imgPets"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Sammy"
+                        android:textColor="#EF6019"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/pet_act_contr"
+
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:id="@+id/txtBubble"
+                   android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_txt_bubble"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/text_bubble" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+
+                    android:layout_toRightOf="@+id/img_txt_bubble"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Welcome to Kriddr's Bark Recognition Platform!"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+               </RelativeLayout>
+                <TextView
+                    android:id="@+id/txtWel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtBubble"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Join others from around the country To become a Citizen Scientist. By recording your dog's bark and tagging your best guess at the meaning, we will build a transition tool to benefit shelter and rescue workers."
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/txtWel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtWel"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="We are all very excited to have you on board, so have fun!"
+                    android:textSize="20sp" />
+
+
+                <Button
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtWel2"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_bg_round_gradient"
+                    android:text="Let's get started!"
+                    android:id="@+id/img_rec_voice"
+
+
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:orientation="vertical"
+
+            android:id="@+id/act_list_contr"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/lo_pet_act_list"
+
+                ></include>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

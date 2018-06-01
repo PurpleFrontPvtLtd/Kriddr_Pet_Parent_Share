@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:id="@+id/scroll_post"
+    android:background="@color/silver_dark"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+<FrameLayout
+    android:layout_width="match_parent"
+
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+
+    android:layout_height="380dp">
+
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:id="@+id/ll_follow_status_contr"
+     android:layout_height="wrap_content">
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="30dp"
+
+         android:src="@drawable/dots"
+         android:layout_marginTop="15dp"
+         android:layout_marginRight="10dp"
+         android:id="@+id/img_dot_unfollow"
+         android:layout_gravity="top|right"
+         />
+
+     <com.facebook.drawee.view.SimpleDraweeView
+         android:id="@+id/imgClient"
+         android:layout_width="140dp"
+          android:layout_marginTop="-30dp"
+          android:layout_gravity="top|center_horizontal"
+
+         android:adjustViewBounds="true"
+         android:layout_height="140dp"
+         android:src="@drawable/dogandcat"
+         ></com.facebook.drawee.view.SimpleDraweeView>
+
+
+     <ImageView
+         android:layout_width="160dp"
+         android:layout_height="40dp"
+
+         android:layout_gravity="center"
+         android:visibility="visible"
+
+         android:id="@+id/txtFollow"
+         android:src="@drawable/follow_txt"
+         android:layout_marginTop="-20dp"
+         />
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:elevation="1dp"
+            android:id="@+id/card_follow_cnt"
+            android:layout_gravity="bottom"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="0dp"
+
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:background="@drawable/pet_count_bg"
+
+                android:layout_height="180dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textColor="#EF6019"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:id="@+id/txtPetName"
+                    android:text="Tangy"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/followed"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/txtPetName"
+                    android:visibility="invisible"
+                    android:id="@+id/imgFollowed"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_below="@+id/txtPetName"
+                    android:id="@+id/txtPetParntName"
+                    android:text="Tangy"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/vw1"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtPetParntName"
+                    android:background="#D1D1D1"
+                    android:layout_height="1dp">
+
+                </View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/vw1"
+                    android:id="@+id/lo_table_follow"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+
+                    android:layout_height="70dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:text="0"
+                            android:id="@+id/txtPostCount"
+                            android:textColor="#EF6019"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_light"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                        <TextView
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Posts"
+                            android:gravity="center"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold"
+                            android:layout_below="@+id/txtPostCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:text="0"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:id="@+id/txtFollwrsCount"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="#EF6019"
+                            android:layout_height="wrap_content"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:textSize="18sp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_below="@+id/txtFollwrsCount"
+                            android:text="Followers"
+                            android:fontFamily="@font/roboto_regular"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:text="0"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="18sp"
+                            android:id="@+id/txtFollowingCount"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="#EF6019"
+                            android:layout_height="wrap_content"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:textSize="18sp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_below="@+id/txtFollowingCount"
+                            android:text="Following"
+                            android:fontFamily="@font/roboto_regular"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/vw2"
+                    android:layout_below="@+id/lo_table_follow"
+                    android:background="#D1D1D1"
+                    android:layout_height="1dp">
+
+                </View>
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+ </LinearLayout>
+</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/lo_pub_feed_contr"
+        android:paddingLeft="15dp"
+
+        android:paddingRight="15dp"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

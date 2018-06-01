@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/curve_up"
+        android:minHeight="450dp"
+
+        android:layout_height="match_parent">
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="40dp"
+
+        android:id="@+id/scroll_pet_act_list"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        fresco:actualImageScaleType="fitCenter"
+        android:id="@+id/img_add_rec_bark"
+        android:layout_centerHorizontal="true"
+
+        />
+</RelativeLayout>

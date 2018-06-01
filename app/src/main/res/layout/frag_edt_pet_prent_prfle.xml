@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_centerHorizontal="true"
+    android:background="@color/silver_dark"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/btnSave"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+
+
+<com.facebook.drawee.view.SimpleDraweeView
+    android:layout_width="130dp"
+
+    android:layout_marginTop="40dp"
+    android:adjustViewBounds="true"
+
+    android:id="@+id/img_edtParntProf"
+    android:layout_height="130dp" />
+  <RelativeLayout
+
+      android:padding="40dp"
+      android:layout_above="@+id/btnSave"
+      android:layout_width="match_parent"
+      android:layout_below="@+id/img_edtParntProf"
+      android:layout_height="wrap_content"
+      android:id="@+id/relativeLayout2">
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:minHeight="40dp"
+          android:paddingLeft="10dp"
+          android:selectAllOnFocus="true"
+          android:maxLength="30"
+          android:hint="Pet parent name"
+          android:fontFamily="@font/roboto_regular"
+          android:background="@drawable/rounded_edittext"
+          android:id="@+id/edt_PetParntName"
+          >
+          <requestFocus></requestFocus>
+      </EditText>
+      <EditText
+          android:layout_width="match_parent"
+          android:background="@drawable/rounded_edittext"
+          android:minHeight="40dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:selectAllOnFocus="true"
+          android:paddingLeft="10dp"
+          android:hint="Phone number"
+
+          android:fontFamily="@font/roboto_regular"
+          android:layout_below="@+id/edt_PetParntName"
+          android:id="@+id/edt_PetPhoneNo"
+          />
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:minHeight="40dp"
+          android:paddingLeft="10dp"
+          android:layout_marginTop="20dp"
+          android:selectAllOnFocus="true"
+          android:maxLength="50"
+          android:layout_below="@+id/edt_PetPhoneNo"
+          android:hint="Email"
+          android:fontFamily="@font/roboto_regular"
+          android:background="@drawable/rounded_edittext"
+          android:id="@+id/edt_email"
+          >
+          <requestFocus></requestFocus>
+      </EditText>
+      <EditText
+          android:layout_width="match_parent"
+          android:minHeight="70dp"
+          android:layout_height="wrap_content"
+
+          android:hint="Address"
+          android:paddingLeft="10dp"
+          android:selectAllOnFocus="true"
+          android:layout_marginTop="20dp"
+          android:fontFamily="@font/roboto_regular"
+          android:background="@drawable/rounded_edittext"
+          android:layout_below="@+id/edt_email"
+          android:id="@+id/edt_PetParntAddrs"
+          />
+  </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentBottom="true"
+
+
+
+
+        android:background="@drawable/gradient_bg"
+        android:fontFamily="@font/robofont"
+        android:text="SAVE"
+        android:textColor="#ffffff" />
+</RelativeLayout>

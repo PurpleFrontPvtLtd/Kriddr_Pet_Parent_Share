@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+
+        android:background="@drawable/bg_pet_diagonal"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:id="@+id/relativeLayout">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_height="130dp"
+            android:layout_width="130dp"
+
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="35dp"
+            android:id="@+id/img_Prnt"
+
+            >
+        </com.facebook.drawee.view.SimpleDraweeView>
+
+        <TextView
+            android:id="@+id/txtPrntNme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_Prnt"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+
+            android:layout_marginTop="5dp"
+            android:text="Hello World" />
+
+        <TextView
+            android:id="@+id/txtCapPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPrntNme"
+
+            android:textSize="18sp"
+            android:layout_marginTop="14dp"
+            android:layout_toLeftOf="@+id/img_Prnt"
+            android:layout_toStartOf="@+id/img_Prnt"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Phone" />
+
+        <TextView
+            android:id="@+id/txt_mobNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginLeft="40dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/txtCapPhone"
+            android:layout_alignTop="@+id/txtCapPhone"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/txtCapEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_mobNo"
+
+            android:textSize="18sp"
+            android:layout_marginTop="14dp"
+            android:layout_alignLeft="@+id/txtCapPhone"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="Email" />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_alignLeft="@+id/txt_mobNo"
+            android:textSize="18sp"
+            android:layout_toRightOf="@+id/txtCapEmail"
+            android:layout_alignTop="@+id/txtCapEmail"
+            android:text="" />
+
+
+        <TextView
+            android:id="@+id/txtCapAddrs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEmail"
+
+            android:textSize="18sp"
+            android:layout_marginTop="14dp"
+            android:layout_alignLeft="@+id/txtCapEmail"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="Address" />
+
+        <TextView
+            android:id="@+id/txtAddrs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_alignLeft="@+id/txt_mobNo"
+            android:textSize="18sp"
+            android:layout_toRightOf="@+id/txtCapAddrs"
+            android:layout_alignTop="@+id/txtCapAddrs"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/imgEditProf"
+            android:layout_width="25dp"
+            android:adjustViewBounds="true"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="22dp"
+            app:srcCompat="@drawable/edit_red" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtCapPets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="#EF6019"
+        android:textSize="18dp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="13dp"
+        android:text="PETS" />
+
+    <ImageView
+        android:id="@+id/imgAddClient"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/txtCapPets"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+
+        app:srcCompat="@drawable/add" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:id="@+id/recycle_pet_list"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/imgAddClient"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</ScrollView>

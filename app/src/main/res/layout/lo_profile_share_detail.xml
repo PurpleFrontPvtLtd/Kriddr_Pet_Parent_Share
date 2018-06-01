@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@color/silver_dark"
+    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:id="@+id/rl_srch_contr"
+        android:layout_marginTop="15dp"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:layout_width="match_parent"
+            android:id="@+id/txtShrdPetName"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="22sp"
+            android:text="Share Sammy's Profile"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_srch_name_phone"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/txtShrdPetName"
+            android:text="Search by name or phone number"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#dc4a2b"
+            android:id="@+id/txtName"
+            android:layout_below="@id/txt_srch_name_phone"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/rounded_gray_edittext"
+            android:layout_height="50dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/edtName"
+            android:maxLines="1"
+            android:hint="Enter name"
+            android:layout_marginTop="5dp"
+
+            android:layout_alignLeft="@+id/txtName"
+            android:layout_below="@+id/txtName"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:text="OR"
+            android:layout_below="@+id/edtName"
+            android:id="@+id/txtOr"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHONE NUMBER"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#dc4a2b"
+            android:id="@+id/txtMob_NO"
+            android:layout_below="@id/txtOr"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/rounded_gray_edittext"
+            android:layout_height="50dp"
+            android:id="@+id/edtMob_No"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="number"
+            android:hint="Enter phone number"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+
+            android:layout_alignLeft="@+id/txtName"
+            android:layout_below="@+id/txtMob_NO"/>
+        <Button
+            android:layout_width="150dp"
+            android:id="@+id/btnSearch"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edtMob_No"
+            android:textColor="#ffffff"
+            android:text="SEARCH"
+            android:background="@drawable/btn_bg_round_gradient"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="18sp"
+        android:id="@+id/txtShedWith"
+
+        android:layout_marginTop="10dp"
+        android:text="Shared with"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/txtNoShare"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="#dc4a2b"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="18sp"
+        android:text="Not shared with anyone"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recycle_shrdWith"
+
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</LinearLayout>
+</ScrollView>

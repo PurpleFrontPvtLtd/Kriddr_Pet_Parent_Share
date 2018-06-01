@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#404040</color>
+    <color name="oragane_dot">#ea8b49</color>
+    <color name="white">#FFFFFF</color>
+    <color name="silver_dark">#E9E9E9</color>
+    <color name="silver_light">#F0F0F0</color>
+    <color name="surface_bg">#e1e1e1</color>
+    <array name="orange_dot_active">
+
+        <item>@color/oragane_dot</item>
+
+
+    </array>
+
+
+    <array name="orange_dot_inactive">
+
+        <item>@color/white</item>
+    </array>
+
+</resources>

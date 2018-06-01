@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_cross_view"
+            android:gravity="center_horizontal">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/imgPet"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+
+
+                ></com.facebook.drawee.view.SimpleDraweeView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile_details_layout"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/profile_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-40dp"
+            android:background="#445259">
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/profile_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_name"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/food_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/profile_details_layout"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:visibility="visible">
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/food_prefrences_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="20dp">
+
+
+                        <TextView
+                            android:id="@+id/food_pref_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="FOOD PREFERENCES"
+                            android:textColor="#dc4a2b"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/food_edit"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@+id/food_pref_txt"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/edit_red" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/brand_details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/food_prefrences_layout"
+                        android:layout_marginLeft="20dp"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/brand_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Brand"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/brand_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/brand_text"
+
+                            android:fontFamily="@font/roboto_regular"
+
+                            android:textSize="16sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/protein_details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/brand_details_layout"
+                        android:layout_marginLeft="20dp"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/protein_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Protein"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/protein_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/protein_text"
+
+                            android:fontFamily="@font/roboto_regular"
+
+
+                            android:textSize="16sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/servings_details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/protein_details_layout"
+                        android:layout_marginLeft="20dp"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/servings_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Servings"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/servings_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/servings_text"
+
+                            android:fontFamily="@font/roboto_regular"
+
+                            android:textSize="16sp" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/notes_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/food_main_layout"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:visibility="visible">
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="0dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/note_text_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+
+                        <TextView
+                            android:id="@+id/notes_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Notes"
+                            android:textColor="#dc4a2b"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/add_Notes"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/notes_text"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/add" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/notes_list_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/note_text_layout">
+
+
+                        <TextView
+                            android:id="@+id/notes_no_data_items"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:text="No notes found"
+                            android:textColor="#dc4a2b"
+                            android:textSize="16sp"
+                            android:visibility="gone" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/notes_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                        </android.support.v7.widget.RecyclerView>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/see_more_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/notes_list_layout"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/see_more_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginEnd="56dp"
+                            android:layout_marginRight="56dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:text="see more"
+                            android:textColor="#dc4a2b"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentBottom="true"
+
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/next_btn" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/record_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notes_layout"
+            android:layout_marginTop="20dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Records"
+                android:textColor="#dc4a2b"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_prof_contr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/record_text_layout"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="#ffffff">
+
+                <RelativeLayout
+                    android:id="@+id/rl_dfdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_plus_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/add" />
+
+
+                    <android.support.v7.widget.RecyclerView
+                         android:id="@+id/lst_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/img_plus_btn"
+                        android:orientation="horizontal" />
+
+
+                    <TextView
+                        android:id="@+id/rec_no_data_items"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:text="No records found"
+                        android:textColor="#dc4a2b"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/img_next_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/next_btn" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtProfShrdWith"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_prof_contr"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Profile Shared with  "
+            android:textColor="#dc4a2b"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imgShrEdit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/txtProfShrdWith"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/edit_red"
+
+            />
+
+        <TextView
+            android:id="@+id/txtSharedWithPersons"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/txtProfShrdWith"
+            android:layout_below="@+id/txtProfShrdWith"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:minHeight="200dp"
+
+            android:textColor="#dc4a2b"
+            android:text="Not shared with anyone"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</ScrollView>
+
+

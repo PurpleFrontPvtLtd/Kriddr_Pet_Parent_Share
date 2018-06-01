@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:id="@+id/scroll_post"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver_dark"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:id="@+id/rl_noFeeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtNoFeeds1"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="        Please go to your "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtNoFeeds2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtNoFeeds1"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center_horizontal"
+
+                android:maxLines="1"
+                android:text="profile "
+                android:textColor="#0044ff"
+
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtNoFeeds5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtNoFeeds2"
+                android:fontFamily="@font/roboto_light"
+
+
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="and "
+
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtNoFeeds4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNoFeeds2"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="add your pets to create a new post"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardContr"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:paddingBottom="2dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="2dp">
+
+                <ImageView
+                    android:id="@+id/imgPrevPets"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/arrow_left" />
+
+                <ImageView
+                    android:id="@+id/imgNextPets"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/arrow_right" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_pet_dtls"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_toLeftOf="@+id/imgNextPets"
+                    android:layout_toRightOf="@id/imgPrevPets"
+                    android:gravity="center">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/imgPets"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        fresco:placeholderImage="@drawable/dogandcat"
+                        android:adjustViewBounds="true"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txtPetDispName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/imgPets"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Sammy"
+                        android:textColor="#EF6019"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/shareContr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/imgPetsPic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                fresco:placeholderImage="@drawable/dogandcat"></com.facebook.drawee.view.SimpleDraweeView>
+
+            <EditText
+                android:id="@+id/edtSharePetsPost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgPetsPic"
+                android:background="@drawable/rounded_edittext"
+                android:focusable="false"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="Share what Sammy is up to"
+                android:paddingLeft="10dp"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lo_ownpets_feed_contr"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+
+                >
+
+            </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

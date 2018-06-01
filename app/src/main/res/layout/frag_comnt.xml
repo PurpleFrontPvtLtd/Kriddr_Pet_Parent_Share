@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:background="@color/silver_dark"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:paddingLeft="16dp"
+          android:paddingRight="16dp"
+          android:layout_above="@+id/comentEntry"
+          android:paddingTop="16dp"
+
+
+          android:layout_height="match_parent">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent">
+
+         <include layout="@layout/card_feed_dtl"></include>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:id="@+id/lo_comnts_contr"
+               android:orientation="vertical"
+              android:layout_height="wrap_content">
+
+          </LinearLayout>
+          </LinearLayout>
+      </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:id="@+id/comentEntry"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_height="80dp">
+         <EditText
+             android:layout_width="match_parent"
+             android:fontFamily="@font/roboto_regular"
+             android:textSize="20sp"
+             android:paddingLeft="10dp"
+             android:id="@+id/edtPostCommnt"
+             android:drawableRight="@drawable/send_icon"
+             android:hint="write your comment"
+             android:background="@drawable/rounded_gray_edittext"
+             android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    </RelativeLayout>

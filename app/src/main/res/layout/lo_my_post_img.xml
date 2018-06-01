@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:id="@+id/scroll_post"
+    android:background="@color/silver_dark"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardContr"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="0dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="#ffffff"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgPrevPets"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_left" />
+
+            <ImageView
+                android:id="@+id/imgNextPets"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_right" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:layout_toLeftOf="@+id/imgNextPets"
+                android:layout_toRightOf="@id/imgPrevPets"
+                android:gravity="center">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgPets"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/dogandcat"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/imgPets"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:id="@+id/txtPetDispName"
+                    android:text="Sammy"
+                    android:textColor="#EF6019"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/ll_follow_status_contr"
+                android:layout_height="wrap_content">
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgClient"
+                    android:layout_width="140dp"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="top|center_horizontal"
+
+                    android:adjustViewBounds="true"
+                    android:layout_height="140dp"
+
+                    ></com.facebook.drawee.view.SimpleDraweeView>
+
+
+
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:elevation="1dp"
+                    android:id="@+id/card_follow_cnt"
+                    android:layout_gravity="bottom"
+                    card_view:cardCornerRadius="16dp"
+                    card_view:cardElevation="0dp"
+
+                    android:layout_marginTop="-30dp"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:padding="15dp"
+
+                        android:background="@drawable/pet_count_bg"
+
+                        android:layout_height="180dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:textColor="#EF6019"
+
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:id="@+id/txtPetName"
+                            android:text="Tangy"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/followed"
+                            android:layout_marginTop="10dp"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/txtPetName"
+                            android:visibility="invisible"
+                            android:id="@+id/imgFollowed"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:layout_below="@+id/txtPetName"
+                            android:id="@+id/txtPetParntName"
+                            android:text="Tangy"
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/vw1"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/txtPetParntName"
+                            android:background="#D1D1D1"
+                            android:layout_height="1dp">
+
+                        </View>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/vw1"
+                            android:id="@+id/lo_table_follow"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
+
+                            android:layout_height="70dp">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                >
+                                <TextView
+                                    android:text="0"
+                                    android:id="@+id/txtPostCount"
+                                    android:textColor="#EF6019"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:ellipsize="end"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    />
+
+                                <TextView
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:text="Posts"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/txtPostCount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                >
+                                <TextView
+                                    android:text="0"
+                                    android:layout_width="match_parent"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="18sp"
+                                    android:maxLines="1"
+                                    android:ellipsize="end"
+                                    android:id="@+id/txtFollwrsCount"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:textColor="#EF6019"
+                                    android:layout_height="wrap_content"
+
+                                    />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:textSize="18sp"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/txtFollwrsCount"
+                                    android:text="Followers"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:layout_height="wrap_content" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                >
+                                <TextView
+                                    android:text="0"
+                                    android:layout_width="match_parent"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:maxLines="1"
+                                    android:ellipsize="end"
+                                    android:textSize="18sp"
+                                    android:id="@+id/txtFollowingCount"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:textColor="#EF6019"
+                                    android:layout_height="wrap_content"
+
+                                    />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:textSize="18sp"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/txtFollowingCount"
+                                    android:text="Following"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:layout_height="wrap_content" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/vw2"
+                            android:layout_below="@+id/lo_table_follow"
+                            android:background="#D1D1D1"
+                            android:layout_height="1dp">
+
+                        </View>
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </FrameLayout>
+
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+
+                android:id="@+id/grid_img_post"
+                >
+
+
+            </GridView>
+    </LinearLayout>
+
+  </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+
+
+    android:paddingBottom="5dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="0dp"
+        android:background="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_height="wrap_content">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="60dp"
+                android:id="@+id/imgProfPic"
+
+
+                android:layout_height="60dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Tangy"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:layout_toLeftOf="@+id/rl_follow_contr"
+                android:id="@+id/txtPersName"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/imgProfPic"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Domm"
+                android:maxLines="1"
+                android:ellipsize="end"
+
+                android:layout_toLeftOf="@+id/rl_follow_contr"
+                android:layout_below="@+id/txtPersName"
+                android:id="@+id/txtMobileNo"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                android:layout_toRightOf="@+id/imgProfPic"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPersType"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                android:layout_toLeftOf="@+id/rl_follow_contr"
+                android:layout_toRightOf="@+id/imgProfPic"
+                android:layout_below="@+id/txtMobileNo"
+                />
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:id="@+id/rl_follow_contr"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_Del"
+                    android:visibility="visible"
+                    android:src="@drawable/delete"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/btnShare"
+                    android:text="Share"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/btn_bg_round_gradient"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="#ffffff"
+                    android:visibility="visible"
+
+                    android:layout_height="30dp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

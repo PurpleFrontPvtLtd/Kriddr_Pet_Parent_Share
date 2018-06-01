@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "356999512800",
+    "firebase_url": "https://kriddrpetparent.firebaseio.com",
+    "project_id": "kriddrpetparent",
+    "storage_bucket": "kriddrpetparent.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356999512800:android:4c49d42ffdb97d9d",
+        "android_client_info": {
+          "package_name": "purplefront.com.kriddrpetparent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356999512800-ihpcgqli8bhug53veqsu06sap7r625nb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "purplefront.com.kriddrpetparent",
+            "certificate_hash": "d86a4bc1a6b9d01d34e98f15e6e4d06080a49cb0"
+          }
+        },
+        {
+          "client_id": "356999512800-2hi9ppqnct2mn1b0j92o0fr8b5po481c.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "356999512800-2hi9ppqnct2mn1b0j92o0fr8b5po481c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5F5DGDtm-_PM1U8Qe24-X8ZgG64nTDLw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356999512800-2hi9ppqnct2mn1b0j92o0fr8b5po481c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

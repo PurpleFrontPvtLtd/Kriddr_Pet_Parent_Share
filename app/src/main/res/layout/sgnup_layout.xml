@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:padding="20dp"
+      android:layout_marginTop="30dp"
+      android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="30dp"
+        android:layout_alignBottom="@+id/flname"
+        android:layout_alignTop="@+id/flname"
+        android:src="@drawable/profile"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"/>
+
+
+    <EditText
+        android:id="@+id/flname"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/profile_icon"
+        android:background="@drawable/rounded_edittext"
+        android:hint="First and Last name"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:inputType="textCapWords"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+      <ImageView
+          android:id="@+id/phone_icon"
+          android:layout_width="30dp"
+          android:layout_alignBottom="@+id/mobile"
+          android:layout_alignTop="@+id/mobile"
+          android:layout_below="@+id/profile_icon"
+          android:src="@drawable/phone"
+          android:layout_height="30dp"/>
+
+
+      <EditText
+          android:id="@+id/mobile"
+          android:layout_marginTop="20dp"
+          android:layout_marginLeft="10dp"
+          android:layout_below="@+id/profile_icon"
+          android:layout_toRightOf="@+id/phone_icon"
+          android:background="@drawable/rounded_edittext"
+          android:hint="Phone number"
+          android:paddingLeft="15dp"
+          android:inputType="number"
+          android:paddingTop="5dp"
+          android:fontFamily="@font/roboto_regular"
+          android:paddingBottom="5dp"
+          android:layout_width="match_parent"
+          android:layout_height="50dp" />
+
+
+
+      <ImageView
+          android:id="@+id/email_icon"
+          android:layout_width="30dp"
+          android:layout_alignBottom="@+id/email_val"
+          android:layout_alignTop="@+id/email_val"
+          android:layout_below="@+id/phone_icon"
+          android:src="@drawable/email"
+          android:layout_height="30dp"/>
+
+
+      <EditText
+          android:id="@+id/email_val"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="20dp"
+          android:layout_below="@+id/phone_icon"
+          android:layout_toRightOf="@+id/phone_icon"
+          android:background="@drawable/rounded_edittext"
+          android:hint="Email"
+          android:paddingLeft="15dp"
+          android:paddingTop="5dp"
+          android:paddingBottom="5dp"
+          android:fontFamily="@font/roboto_regular"
+          android:inputType="textNoSuggestions"
+          android:layout_width="match_parent"
+          android:layout_height="50dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_alignLeft="@+id/email_val"
+        android:layout_below="@+id/email_val"
+        android:id="@+id/txtTermsCondts"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:layout_height="wrap_content" />
+
+  </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_bg"
+        android:fontFamily="@font/robofont"
+        android:text="SIGN UP"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

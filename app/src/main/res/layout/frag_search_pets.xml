@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+
+    android:background="@color/silver_dark"
+    >
+<TextView
+    android:layout_width="match_parent"
+    android:fontFamily="@font/roboto_regular"
+    android:textSize="16sp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/txtResults"
+
+    android:text="Results"
+    />
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:id="@+id/lstvw_srchPetList"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtResults" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:scaleType="fitEnd"
+        android:layout_height="wrap_content"
+        android:src="@drawable/search_bottom"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
