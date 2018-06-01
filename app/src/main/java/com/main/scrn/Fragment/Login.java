@@ -194,7 +194,7 @@ public class Login extends Fragment {
 
             final ApiInterface requestInterface = ApiClient.getClient();
             final CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-            mCompositeDisposable.add(requestInterface._lgn_user(first_name, "91||" + mobile_number)
+            mCompositeDisposable.add(requestInterface._lgn_user(first_name, "1||" + mobile_number)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<GenResModel>() {

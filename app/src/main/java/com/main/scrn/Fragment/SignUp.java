@@ -176,7 +176,7 @@ public class SignUp extends Fragment {
             dialog.show();
             ApiInterface requestInterface = ApiClient.getClient();
             CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-            mCompositeDisposable.add(requestInterface._reg_user(first_Name,"91||"+mobile_No, email_Val)
+            mCompositeDisposable.add(requestInterface._reg_user(first_Name,"1||"+mobile_No, email_Val)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<GenResModel>() {

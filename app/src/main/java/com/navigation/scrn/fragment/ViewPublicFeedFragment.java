@@ -440,6 +440,7 @@ public class ViewPublicFeedFragment extends Fragment implements SocialFeedAdapte
                             Toast.makeText(getContext(), "" + gen_response_model.getResult(), Toast.LENGTH_SHORT).show();
                             //((AppCompatActivity) getContext()).getSupportFragmentManager().popBackStackImmediate();
                             //  lo_own_feed_contr.requestFocus();
+                            showFeedFragment();
 
                         }
 
@@ -454,6 +455,26 @@ public class ViewPublicFeedFragment extends Fragment implements SocialFeedAdapte
                             dialog.dismiss();
                         }
                     }));
+        }
+    }
+
+    public void showFeedFragment(){
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        Fragment prev_frag = null;
+        Fragment srch_frag=null;
+        prev_frag = getActivity().getSupportFragmentManager().findFragmentByTag("frag_feed");
+        srch_frag = getActivity().getSupportFragmentManager().findFragmentByTag("Search_Pets");
+        //Fragment frag_feed = getActivity().getSupportFragmentManager().findFragmentByTag("frag_feed");
+        //  Toast.makeText(getContext(), "I am ", Toast.LENGTH_LONG).show();
+        if(srch_frag.isAdded()){
+            ft.remove(srch_frag);
+        }
+        if (prev_frag.isAdded()) { // if the fragment is already in container
+            //    Toast.makeText(getContext(), "I am Here", Toast.LENGTH_LONG).show();
+            ft.remove(this);
+            ft.show(prev_frag);
+
+            ft.commit();
         }
     }
 
