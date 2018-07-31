@@ -81,6 +81,7 @@ public class SearchPetsFragment extends Fragment implements SearchPetsAdapter.Se
                 InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(actionBarUtilObj.getImgBack().getWindowToken(), 0);
                  searchText = actionBarUtilObj.getEdtSearch().getText().toString();
+                searchText = searchText.replaceAll("[^0-9]", "").trim();
                 if ((searchText.trim().equalsIgnoreCase(""))) {
                     Toast.makeText(getContext(), "Please enter the phone number", Toast.LENGTH_SHORT).show();
                 } else if (!searchText.trim().equalsIgnoreCase(userModelObj.getMobile())) {
@@ -233,10 +234,10 @@ public class SearchPetsFragment extends Fragment implements SearchPetsAdapter.Se
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "SEARCHPET_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "SEARCHPET_STATE", this); super.onSaveInstanceState(outState);
     }
 
 

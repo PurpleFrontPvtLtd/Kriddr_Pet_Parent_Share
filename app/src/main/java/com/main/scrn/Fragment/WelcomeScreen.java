@@ -74,6 +74,7 @@ public class WelcomeScreen extends Fragment {
         return rootView;
     }
 
+
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof FragmentCallInterface) {
@@ -141,6 +142,33 @@ public class WelcomeScreen extends Fragment {
                 genFragmentCall_mainObj.Fragment_call(null,new SignUp(), "SgnUpFrag", null);
             }
         });
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Fragment mContent;
+        if(savedInstanceState!=null) {
+            mContent = getActivity().getSupportFragmentManager().getFragment(savedInstanceState, "Welcome_State");
+            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+            fragmentTransaction.replace(R.id.frame_layout, mContent, "MainFrag");
+
+
+            fragmentTransaction.addToBackStack("MainFrag");
+
+            fragmentTransaction.commit();
+
+        }
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //Save the fragment's instance
+        getActivity().getSupportFragmentManager().putFragment(outState, "Welcome_State", this); super.onSaveInstanceState(outState);
     }
 
 

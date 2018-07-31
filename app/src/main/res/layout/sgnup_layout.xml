@@ -60,7 +60,7 @@
           android:background="@drawable/rounded_edittext"
           android:hint="Phone number"
           android:paddingLeft="15dp"
-          android:inputType="number"
+          android:inputType="phone"
           android:paddingTop="5dp"
           android:fontFamily="@font/roboto_regular"
           android:paddingBottom="5dp"

@@ -2,6 +2,7 @@ package com.util;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -62,7 +63,7 @@ public class ActionBarUtil {
         imgSearch = (ImageView) v.findViewById(R.id.imgSearch);
         imgNotify= (ImageView) v.findViewById(R.id.img_Notify);
         imgSharePet=(ImageView)v.findViewById(R.id.imgSharePet);
-
+        edtSearch.addTextChangedListener(new PhoneNumberFormattingTextWatcher("US"));
 
     }
 

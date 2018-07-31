@@ -298,10 +298,10 @@ public class ViewPublicFeedFragment extends Fragment implements SocialFeedAdapte
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "View_Public_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "View_Public_STATE", this); super.onSaveInstanceState(outState);
     }
 
 
@@ -771,7 +771,7 @@ public class ViewPublicFeedFragment extends Fragment implements SocialFeedAdapte
 
             ApiInterface requestInterface = ApiClient.getClient();
             CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-            mCompositeDisposable.add(requestInterface._getPetFeedDtls(petId, ownerId, String.valueOf(pag_index))
+            mCompositeDisposable.add(requestInterface._getPetFeedDtls(petId, ownerId, "my")
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<PostResponseModel>() {
@@ -780,20 +780,25 @@ public class ViewPublicFeedFragment extends Fragment implements SocialFeedAdapte
                             dialog.dismiss();
                             // Toast.makeText(getContext(),"Owner"+userModel.getOwner_id(),Toast.LENGTH_SHORT).show();
                             if (client_collection_model_obj != null) {
-                                PostDetailModel info_model = client_collection_model_obj.getPosts_details().get(0);
-                                if (info_model.getPet_posts_id().equalsIgnoreCase("empty")) {
+                                if(client_collection_model_obj.getPosts_details().size()==0){
 
-                                } else {
-                                    //  Pet_List = client_collection_model_obj.getResponse();
-                                    List<PostDetailModel> detailModels = client_collection_model_obj.getPosts_details();
-                                    if (postDetailModelListOBJ == null) {
-                                        postDetailModelListOBJ = detailModels;
+                                }
+                                else {
+                                    PostDetailModel info_model = client_collection_model_obj.getPosts_details().get(0);
+                                    if (info_model.getPet_posts_id().equalsIgnoreCase("empty")) {
+
                                     } else {
-                                        postDetailModelListOBJ.addAll(detailModels);
+                                        //  Pet_List = client_collection_model_obj.getResponse();
+                                        List<PostDetailModel> detailModels = client_collection_model_obj.getPosts_details();
+                                        if (postDetailModelListOBJ == null) {
+                                            postDetailModelListOBJ = detailModels;
+                                        } else {
+                                            postDetailModelListOBJ.addAll(detailModels);
+                                        }
+                                        setFeedAdapter();
+
+
                                     }
-                                  setFeedAdapter();
-
-
                                 }
                                 CountModel countModel = client_collection_model_obj.getCount_details();
                                 txtPostCount.setText(countModel.getPosts_count());
@@ -1116,7 +1121,7 @@ public class ViewPublicFeedFragment extends Fragment implements SocialFeedAdapte
                 //  Toast.makeText(getContext(),"ScrollView end",Toast.LENGTH_SHORT).show();
                 if (RestrictToCallMultiple == 0 || (scrollView_post.getChildAt(0).getBottom() != RestrictToCallMultiple)) {
                     pag_index++;
-                    PostFeedServiceCall();
+                  //  PostFeedServiceCall();
                     RestrictToCallMultiple = scrollView_post.getChildAt(0).getBottom();
                 }
             } else {

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/scroll_pet_req_contr"
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_popup_window_whitebg"
+
+        android:layout_height="350dp">
+        <ImageView
+            android:id="@+id/image_close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/robofont"
+            android:src="@drawable/cancel"
+            android:textSize="25dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/image_close"
+            android:background="#ffffff"
+
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingBottom="10dp"
+                android:background="#ffffff"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/txt_main_hdr"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="18sp"
+                    android:textColor="#dc4a2b"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/txtMsgDtl"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_below="@+id/txt_main_hdr"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content" />
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgDoc"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/txtMsgDtl"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"
+
+                    ></com.facebook.drawee.view.SimpleDraweeView>
+
+
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/food_main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imgDoc"
+                    android:layout_marginTop="10dp"
+
+                    android:visibility="visible">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/txt_doc_name"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/txt_doc_category"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/txt_doc_name"
+                        android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_below="@+id/scroll_pet_req_contr"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_allow"
+            android:layout_weight="1"
+            android:text="Approve"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="#ffffff"
+            android:background="@drawable/gradient_left_btn_bg"
+
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_deny"
+            android:layout_weight="1"
+            android:text="Deny"
+
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="#ffffff"
+            android:background="@drawable/gradient_right_btn_bg"
+
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>

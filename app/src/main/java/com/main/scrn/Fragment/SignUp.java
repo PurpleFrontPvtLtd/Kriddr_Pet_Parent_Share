@@ -118,7 +118,11 @@ public class SignUp extends Fragment {
             Toast.makeText(getActivity(), "Please enter first and last name", Toast.LENGTH_SHORT).show();
         } else if (mobile_No.isEmpty() || mobile_No.equals("")) {
             Toast.makeText(getActivity(), "Please enter phone number", Toast.LENGTH_SHORT).show();
-        }else if(email_Val.equals(""))
+        }
+        else if(mobile_No.length()<10){
+            Toast.makeText(getActivity(), "Please enter 10 digit mobile number", Toast.LENGTH_SHORT).show();
+        }
+        else if(email_Val.equals(""))
         {
             Toast.makeText(getActivity(), "Please enter email", Toast.LENGTH_SHORT).show();
         }
@@ -161,10 +165,11 @@ public class SignUp extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
         getActivity().getSupportFragmentManager().putFragment(outState, "SIGNUP_STATE", this);
+        super.onSaveInstanceState(outState);
     }
 
 
@@ -176,7 +181,7 @@ public class SignUp extends Fragment {
             dialog.show();
             ApiInterface requestInterface = ApiClient.getClient();
             CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-            mCompositeDisposable.add(requestInterface._reg_user(first_Name,"1||"+mobile_No, email_Val)
+            mCompositeDisposable.add(requestInterface._reg_user(first_Name,"91||"+mobile_No, email_Val)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<GenResModel>() {

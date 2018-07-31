@@ -2,4 +2,5 @@
     <string name="app_name">KriddrPetParent</string>
     <string name="verification_message">Please enter the verification \n code sent to your phone number</string>
     <string name="net_con">Please check network connection</string>
+    <string name="Q_and_A">Q &amp; A</string>
 </resources>

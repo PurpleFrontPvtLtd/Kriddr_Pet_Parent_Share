@@ -552,10 +552,10 @@ public class OwnFeedFragment extends Fragment implements SocialFeedAdapter.Socia
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "OWNFEED_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "OWNFEED_STATE", this); super.onSaveInstanceState(outState);
     }
 
     public void block_user_api_call(String blocking_ownerId){
@@ -654,23 +654,37 @@ public class OwnFeedFragment extends Fragment implements SocialFeedAdapter.Socia
                         public void onNext(PostResponseModel client_collection_model_obj) {
                             dialog.dismiss();
                             // Toast.makeText(getContext(),"Owner"+userModel.getOwner_id(),Toast.LENGTH_SHORT).show();
+                            if(client_collection_model_obj.getNotification_status().equalsIgnoreCase("1")){
+                                //YES
+                                actionBarUtilObj.getImgNotify().setImageResource(R.drawable.nfy_badge);
+                            }
+                            else{
+                                //NO
+                                actionBarUtilObj.getImgNotify().setImageResource(R.drawable.notification);
+                            }
                             if (Pag_Index == 0) {
                                 lo_own_feed_contr.removeAllViewsInLayout();
                             }
                             if (client_collection_model_obj != null) {
-                                PostDetailModel info_model = client_collection_model_obj.getPosts_details().get(0);
-                                if (info_model.getPet_posts_id().equalsIgnoreCase("empty")) {
+                                if(client_collection_model_obj.getPosts_details().size()==0){
 
-                                } else {
-                                    if (postDetailModelListOBJ == null)
-                                        postDetailModelListOBJ = client_collection_model_obj.getPosts_details();
-                                    else {
-                                        List<PostDetailModel> temPostDetailModels = client_collection_model_obj.getPosts_details();
-                                        postDetailModelListOBJ.addAll(temPostDetailModels);
+                                }
+                                else {
+                                    PostDetailModel info_model = client_collection_model_obj.getPosts_details().get(0);
+
+                                    if (info_model.getPet_posts_id().equalsIgnoreCase("empty")) {
+
+                                    } else {
+                                        if (postDetailModelListOBJ == null)
+                                            postDetailModelListOBJ = client_collection_model_obj.getPosts_details();
+                                        else {
+                                            List<PostDetailModel> temPostDetailModels = client_collection_model_obj.getPosts_details();
+                                            postDetailModelListOBJ.addAll(temPostDetailModels);
+                                        }
+                                        setFeedAdapter();
+
+
                                     }
-                                    setFeedAdapter();
-
-
                                 }
                             }
 
@@ -1236,7 +1250,7 @@ public class OwnFeedFragment extends Fragment implements SocialFeedAdapter.Socia
                         @Override
                         public void onComplete() {
                             dialog.dismiss();
-                            PostFeedServiceCall();
+
                         }
                     }));
         }

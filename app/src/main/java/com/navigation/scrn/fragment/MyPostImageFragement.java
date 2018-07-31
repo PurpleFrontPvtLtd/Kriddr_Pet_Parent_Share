@@ -204,10 +204,10 @@ public class MyPostImageFragement extends Fragment implements ImageMyPostAdapter
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "MY_POST_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "MY_POST_STATE", this); super.onSaveInstanceState(outState);
     }
 
     public void hide_fragment() {
@@ -406,35 +406,40 @@ public class MyPostImageFragement extends Fragment implements ImageMyPostAdapter
                             dialog.dismiss();
                             // Toast.makeText(getContext(),"Owner"+userModel.getOwner_id(),Toast.LENGTH_SHORT).show();
                             grid_img_post.removeAllViewsInLayout();
+                             int count = 0;
                             if (client_collection_model_obj != null) {
-                                PostDetailModel info_model = client_collection_model_obj.getPosts_details().get(0);
-                                CountModel countModel = client_collection_model_obj.getCount_details();
-                                txtFollwrsCount.setText(countModel.getFollow_count());
-                                txtFollowingCount.setText(countModel.getFollowing_count());
-                                int count = 0;
-                                if (info_model.getPet_posts_id().equalsIgnoreCase("empty")) {
+                                if(client_collection_model_obj.getPosts_details().size()==0){
 
-                                } else {
+                                }
+                                else {
+                                    PostDetailModel info_model = client_collection_model_obj.getPosts_details().get(0);
+                                    CountModel countModel = client_collection_model_obj.getCount_details();
+                                    txtFollwrsCount.setText(countModel.getFollow_count());
+                                    txtFollowingCount.setText(countModel.getFollowing_count());
 
-                                    postDetailModelListOBJ = client_collection_model_obj.getPosts_details();
+                                    if (info_model.getPet_posts_id().equalsIgnoreCase("empty")) {
+
+                                    } else {
+
+                                        postDetailModelListOBJ = client_collection_model_obj.getPosts_details();
 
 
-                                    for (int i = 0; i < postDetailModelListOBJ.size(); i++) {
+                                        for (int i = 0; i < postDetailModelListOBJ.size(); i++) {
 
-                                        if (postDetailModelListOBJ.get(i).getImage().equalsIgnoreCase("")) {
-                                           // count--;
-                                            postDetailModelListOBJ.remove(i);
+                                            if (postDetailModelListOBJ.get(i).getImage().equalsIgnoreCase("")) {
+                                                // count--;
+                                                postDetailModelListOBJ.remove(i);
+                                            } else {
+                                                count++;
+                                            }
                                         }
-                                        else{
-                                            count++;
+                                        if (count > 0)
+                                            setMyPostAdapter();
+                                        else {
+                                            Toast.makeText(getContext(), "No Image found", Toast.LENGTH_LONG).show();
                                         }
-                                    }
-                                    if (count > 0)
-                                        setMyPostAdapter();
-                                    else {
-                                        Toast.makeText(getContext(), "No Image found", Toast.LENGTH_LONG).show();
-                                    }
 
+                                    }
                                 }
 
                                 txtPostCount.setText(String.valueOf(count));

@@ -218,10 +218,10 @@ public class RecordCreationFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "REC_CRT_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "REC_CRT_STATE", this);super.onSaveInstanceState(outState);
     }
 
 
@@ -253,7 +253,7 @@ public class RecordCreationFragment extends Fragment implements View.OnClickList
             dialog.show();
             ApiInterface requestInterface = ApiClient.getClient();
             CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-            mCompositeDisposable.add(requestInterface._create_record(userModel.getOwner_id(), pet_id, docName, doc_id, imgRec_ByteStr, "owner")
+            mCompositeDisposable.add(requestInterface._create_record(userModel.getOwner_id(), pet_id, docName, doc_id, imgRec_ByteStr, "2 ")
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<Gen_Response_Model>() {

@@ -1,11 +1,22 @@
 package com.Model;
 
+import java.util.List;
+
 public class NotificationModel {
     String reaction_id;
     String type;
     String notification;
     String photo;
 
+    public List<Nfy_Variable_Model> getVariables() {
+        return variables;
+    }
+
+    public void setVariables(List<Nfy_Variable_Model> variables) {
+        this.variables = variables;
+    }
+
+    List<Nfy_Variable_Model> variables;
     public String getReacted_pet_name() {
         return reacted_pet_name;
     }
@@ -16,6 +27,16 @@ public class NotificationModel {
 
     String reacted_pet_name;
     String created;
+
+    public String getRead_status() {
+        return read_status;
+    }
+
+    public void setRead_status(String read_status) {
+        this.read_status = read_status;
+    }
+
+    String read_status;
 
     public String getReaction_id() {
         return reaction_id;

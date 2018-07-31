@@ -10,6 +10,15 @@ public class PostResponseModel {
      List<PostDetailModel> posts_details;
     CountModel count_details;
 
+    public String getNotification_status() {
+        return notification_status;
+    }
+
+    public void setNotification_status(String notification_status) {
+        this.notification_status = notification_status;
+    }
+
+    String notification_status;
     public CountModel getCount_details() {
         return count_details;
     }

@@ -12,6 +12,12 @@
         android:id="@+id/navigation_invoice"
         android:icon="@drawable/ic_tabinvoicedark"
         android:title="Activity" />
+    <item
+        android:id="@+id/navigation_QA"
+
+        android:icon="@drawable/edit_red"
+
+        android:title="@string/Q_and_A" />
 
     <item
         android:id="@+id/navigation_profile"

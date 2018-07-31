@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +51,8 @@ import com.util.GenFragmentCall_Main;
 import com.util.NetworkConnection;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import dmax.dialog.SpotsDialog;
@@ -89,13 +92,15 @@ public class View_Parent_Profile extends Fragment implements Client_list_adapter
         vwRecycle_pet_list = (RecyclerView) rootView.findViewById(R.id.recycle_pet_list);
         imgEditProfile = (ImageView) rootView.findViewById(R.id.imgEditProf);
         imgAddClient = (ImageView) rootView.findViewById(R.id.imgAddClient);
+        txtPhone.addTextChangedListener(new PhoneNumberFormattingTextWatcher("US"));
 
         vwRecycle_pet_list.setHasFixedSize(true);
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, true);
+       LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
+    //  linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         linearLayoutManager.setSmoothScrollbarEnabled(true);
-        linearLayoutManager.scrollToPositionWithOffset(0,0);
+        //linearLayoutManager.scrollToPositionWithOffset(0,0);
         vwRecycle_pet_list.setLayoutManager(linearLayoutManager);
         vwRecycle_pet_list.setNestedScrollingEnabled(false);
         txtParntName.setText(usrModelobj.getOwner_name());
@@ -221,10 +226,11 @@ public class View_Parent_Profile extends Fragment implements Client_list_adapter
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
         getActivity().getSupportFragmentManager().putFragment(outState, "View_PARNTPROF_STATE", this);
+        super.onSaveInstanceState(outState);
     }
 
 
@@ -334,9 +340,19 @@ public class View_Parent_Profile extends Fragment implements Client_list_adapter
     }
 
     public void setPetListAdapter(List<Client_info_Model> list_Client_info_models) {
-        Client_list_adapter mAdapter = new Client_list_adapter(list_Client_info_models, getActivity(), this);
 
+      //  List<Client_info_Model> TempDocList = new ArrayList<>(list_Client_info_models);
+
+
+        Collections.sort(list_Client_info_models, new Comparator<Client_info_Model>() {
+            @Override public int compare(Client_info_Model p1, Client_info_Model p2) {
+                return Integer.parseInt(p2.getPet_id()) - Integer.parseInt(p1.getPet_id()); // Descending
+            }
+
+        });
+        Client_list_adapter mAdapter = new Client_list_adapter(list_Client_info_models, getActivity(), this);
         vwRecycle_pet_list.setAdapter(mAdapter);
+        vwRecycle_pet_list.scrollToPosition(0);
         //((LinearLayoutManager) vwRecycle_pet_list.getLayoutManager()).smoothScrollToPosition(vwRecycle_pet_list,null,0);
         //vwRecycle_pet_list.scrollToPosition(list_Client_info_models.size() - 1);
 

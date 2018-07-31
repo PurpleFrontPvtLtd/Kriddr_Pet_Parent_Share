@@ -28,6 +28,14 @@ public class GenFragmentCall_Main {
 
     }
 
+    /**
+     *
+     * @param cur_fraagment
+     * @param _scrn_fragment
+     * @param tag
+     * @param Args
+     * If cur_fragment args is used for hide the current fragment.Set null if u don't need.
+     */
     public void Fragment_call(Fragment cur_fraagment, Fragment _scrn_fragment, String tag, Bundle Args) {
         fragmentTransaction = fragmentManager.beginTransaction();
         if (cur_fraagment != null) {

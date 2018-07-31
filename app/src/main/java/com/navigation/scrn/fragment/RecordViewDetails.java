@@ -161,10 +161,10 @@ public class RecordViewDetails extends Fragment{
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "REC_VW_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "REC_VW_STATE", this); super.onSaveInstanceState(outState);
     }
 
 

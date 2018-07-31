@@ -17,7 +17,7 @@
     android:layout_above="@+id/img_play_stop_rec"
     android:layout_height="wrap_content">
 
-    <com.alex.siriwaveview.SiriWaveView
+    <com.Custom.SiriWaveView
         android:id="@+id/siriWaveView"
 
         android:layout_width="match_parent"

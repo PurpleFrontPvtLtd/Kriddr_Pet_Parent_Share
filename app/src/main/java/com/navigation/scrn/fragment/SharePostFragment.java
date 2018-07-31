@@ -343,10 +343,10 @@ public class SharePostFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "SHARE_POST_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "SHARE_POST_STATE", this); super.onSaveInstanceState(outState);
     }
 
 

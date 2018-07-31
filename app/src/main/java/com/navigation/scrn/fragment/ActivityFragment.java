@@ -231,10 +231,10 @@ public class ActivityFragment extends Fragment implements Pet_ActivityList_Adapt
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "ACTY_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "ACTY_STATE", this);super.onSaveInstanceState(outState);
     }
 
     @Override

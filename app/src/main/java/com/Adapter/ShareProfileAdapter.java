@@ -96,13 +96,17 @@ public class ShareProfileAdapter extends RecyclerView.Adapter<ShareProfileAdapte
             holder.imgProfPic.getHierarchy().setRoundingParams(roundingParams);
         }
         holder.txtPersType.setText(type);
-
-        holder.btnShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListenr.onShareClick(personToShare.getId(),personToShare.getType());
-            }
-        });
+        if(personToShare.getShare_status().trim().equalsIgnoreCase("shared")){
+        holder.btnShare.setText("Shared");
+        }
+        else {
+            holder.btnShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListenr.onShareClick(personToShare.getId(), personToShare.getType(),personToShare.getMobile());
+                }
+            });
+        }
         holder.btnShare.setVisibility(View.VISIBLE);
         holder.img_Del.setVisibility(View.GONE);
 
@@ -135,7 +139,7 @@ public class ShareProfileAdapter extends RecyclerView.Adapter<ShareProfileAdapte
     }
 
     public interface shareClickInterface{
-        public void onShareClick(String usrId,String usrType);
+        public void onShareClick(String usrId,String usrType,String usr_mobile);
     }
 
 }

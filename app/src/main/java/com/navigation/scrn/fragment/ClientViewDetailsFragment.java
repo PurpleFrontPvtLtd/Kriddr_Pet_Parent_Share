@@ -162,7 +162,8 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
                 Bundle bundle = new Bundle();
                 bundle.putString("pet_id", pet_id);
                 bundle.putString("petName", petDetailObj.getPet_name());
-                fragmentCall_mainObj.Fragment_call(null, new Shared_Profile_Details(), "shar_prof_dtl", bundle);
+              //  bundle.putInt("Opts_Share",Shared_Profile_Details.Options_Share.All.ordinal());
+                fragmentCall_mainObj.Fragment_call(null,new Shared_Profile_Details(),"Share_Prof",bundle);
             }
         });
         imgShrEdit = (ImageView) rootView.findViewById(R.id.imgShrEdit);
@@ -192,7 +193,8 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
         recycle_record_list.setNestedScrollingEnabled(false);
 
         recycle_notes_list = (RecyclerView) rootView.findViewById(R.id.notes_list);
-        recycle_record_list.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
+
+        recycle_record_list.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         recycle_notes_list.setHasFixedSize(true);
         recycle_notes_list.setNestedScrollingEnabled(false);
 
@@ -222,12 +224,14 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
         imgPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgImageChooser_crop = new ImageChooser_Crop(getActivity());
-                Intent intent = imgImageChooser_crop.getPickImageChooserIntent();
-                if (intent == null) {
-                    //PermissionUtil.
-                } else {
-                    startActivityForResult(intent, PICK_IMAGE_REQ);
+                if (!pet_type.trim().equalsIgnoreCase("shared_pet")) {
+                    imgImageChooser_crop = new ImageChooser_Crop(getActivity());
+                    Intent intent = imgImageChooser_crop.getPickImageChooserIntent();
+                    if (intent == null) {
+                        //PermissionUtil.
+                    } else {
+                        startActivityForResult(intent, PICK_IMAGE_REQ);
+                    }
                 }
             }
         });
@@ -348,10 +352,10 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "CLIENT_VW_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "CLIENT_VW_STATE", this); super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -505,7 +509,6 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
                         @Override
                         public void onNext(PetDetailsModel gen_response_model) {
                             dialog.dismiss();
-
                             petDetailObj = gen_response_model.getPet_details().get(0);
                             profile_dob.setText("DOB: " + petDetailObj.getDob());
                             profile_name.setText(petDetailObj.getPet_name());
@@ -526,7 +529,7 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
 
                                     .load(petDetailObj.getPhoto())
                                     .asBitmap()
-                                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                                    .diskCacheStrategy(DiskCacheStrategy.R  ESULT)
                                     .into(new SimpleTarget<Bitmap>() {
                                         @Override
                                         public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
@@ -575,18 +578,17 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
                             if (gen_response_model.getDocuments_list().get(0).getDocument().equalsIgnoreCase("empty")) {
                                 txt_rec_no_data_items.setVisibility(View.VISIBLE);
                             } else {
-                                List<DocumentModel> TempDocList = new ArrayList<>(gen_response_model.getDocuments_list());
-
+                               ArrayList<DocumentModel> TempDocList = new ArrayList<>(gen_response_model.getDocuments_list());
 
                                 Collections.sort(TempDocList, new Comparator<DocumentModel>() {
-                                    public int compare(DocumentModel s1, DocumentModel s2) {
-                                        // Write your logic here.
-
-                                        return (s1.getDocuments_id().compareToIgnoreCase(s2.getDocuments_id()));
+                                    @Override public int compare(DocumentModel p1, DocumentModel p2) {
+                                        return Integer.parseInt(p2.getDocuments_id()) - Integer.parseInt(p1.getDocuments_id()); // Descending
                                     }
+
                                 });
                                 setRecordsAdapter(TempDocList);
                             }
+
                         }
 
                         @Override
@@ -623,6 +625,7 @@ public class ClientViewDetailsFragment extends Fragment implements DataFromAdapt
     public void setRecordsAdapter(List<DocumentModel> documentModels) {
         RecordsAdapter recordsAdapter = new RecordsAdapter(documentModels, getContext(), this);
         recycle_record_list.setAdapter(recordsAdapter);
+        recycle_record_list.scrollToPosition(0);
     }
 
     @Override

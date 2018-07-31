@@ -4,8 +4,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class SearchPersonToShare implements Parcelable {
-    String id,name,mobile,type,photo;
-
+    String id;
+    String name;
+    String mobile;
+    String type;
+    String photo;
 
     protected SearchPersonToShare(Parcel in) {
         id = in.readString();
@@ -13,6 +16,8 @@ public class SearchPersonToShare implements Parcelable {
         mobile = in.readString();
         type = in.readString();
         photo = in.readString();
+        result = in.readString();
+        share_status = in.readString();
     }
 
     public static final Creator<SearchPersonToShare> CREATOR = new Creator<SearchPersonToShare>() {
@@ -26,6 +31,28 @@ public class SearchPersonToShare implements Parcelable {
             return new SearchPersonToShare[size];
         }
     };
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    String result;
+
+    public String getShare_status() {
+        return share_status;
+    }
+
+    public void setShare_status(String share_status) {
+        this.share_status = share_status;
+    }
+
+    String share_status;
+
+
 
     public String getPhoto() {
         return photo;
@@ -67,6 +94,7 @@ public class SearchPersonToShare implements Parcelable {
         this.type = type;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -79,5 +107,7 @@ public class SearchPersonToShare implements Parcelable {
         dest.writeString(mobile);
         dest.writeString(type);
         dest.writeString(photo);
+        dest.writeString(result);
+        dest.writeString(share_status);
     }
 }

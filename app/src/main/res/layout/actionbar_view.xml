@@ -58,7 +58,7 @@
         android:layout_toLeftOf="@+id/imgSearch"
         android:hint="Enter phone number"
 
-        android:inputType="number"
+        android:inputType="phone"
 
         android:fontFamily="@font/roboto_regular"
         android:textColor="#000000"

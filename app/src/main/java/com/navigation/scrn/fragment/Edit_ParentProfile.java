@@ -16,6 +16,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.util.Base64;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -96,7 +97,7 @@ public class Edit_ParentProfile extends Fragment {
         edt_email = (EditText) rootView.findViewById(R.id.edt_email);
         btnSave = (Button) rootView.findViewById(R.id.btnSave);
         imgEdtParntProf = (SimpleDraweeView) rootView.findViewById(R.id.img_edtParntProf);
-
+        edtParntPhone.addTextChangedListener(new PhoneNumberFormattingTextWatcher("US"));
 
         imgImageChooser_crop = new ImageChooser_Crop(getActivity());
 
@@ -209,19 +210,18 @@ public class Edit_ParentProfile extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "EDIT_PARNTPROF_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "EDIT_PARNTPROF_STATE", this);super.onSaveInstanceState(outState);
     }
 
 
     public void updatePetParent() {
         final String petparent_name = edtParntName.getText().toString().trim();
         final String address = edtParntAddrs.getText().toString().trim();
-        final String mobile = edtParntPhone.getText().toString().trim();
+        final String mobile = edtParntPhone.getText().toString().trim().replaceAll("[^0-9]", "").trim();
         final String email = edt_email.getText().toString().trim();
-
 
         if (petparent_name.trim().equalsIgnoreCase("")) {
             Toast.makeText(getContext(), "Please enter pet parent name", Toast.LENGTH_SHORT).show();

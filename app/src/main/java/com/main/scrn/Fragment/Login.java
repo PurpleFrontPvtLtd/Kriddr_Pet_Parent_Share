@@ -83,7 +83,12 @@ public class Login extends Fragment {
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().popBackStackImmediate();
             }
         });
-
+        actionBarUtilObj.getTitle().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((AppCompatActivity) getActivity()).getSupportFragmentManager().popBackStackImmediate();
+            }
+        });
         actionBarUtilObj.setActionBarVisible();
         actionBarUtilObj.setViewInvisible();
         actionBarUtilObj.setTitle("Sign In");
@@ -141,7 +146,7 @@ public class Login extends Fragment {
 
         if (first_name.equals("")) {
             Toast.makeText(getActivity(), "Please enter first and last name", Toast.LENGTH_SHORT).show();
-        } else if (mobile_number.equals("")) {
+        } else if (mobile_number.trim().equals("")) {
             Toast.makeText(getActivity(), "Please enter phone number", Toast.LENGTH_SHORT).show();
         } else {
             if (NetworkConnection.isOnline(getActivity())) {
@@ -177,10 +182,11 @@ public class Login extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
         getActivity().getSupportFragmentManager().putFragment(outState, "LOGIN_STATE", this);
+        super.onSaveInstanceState(outState);
     }
 
     private void loginData() {
@@ -194,7 +200,7 @@ public class Login extends Fragment {
 
             final ApiInterface requestInterface = ApiClient.getClient();
             final CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-            mCompositeDisposable.add(requestInterface._lgn_user(first_name, "1||" + mobile_number)
+            mCompositeDisposable.add(requestInterface._lgn_user(first_name, "91||" + mobile_number)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<GenResModel>() {

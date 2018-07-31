@@ -30,6 +30,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:src="@drawable/cancel"
+
             android:fontFamily="@font/robofont"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
@@ -47,6 +48,7 @@
             android:layout_toRightOf="@+id/brand_txt"
             android:background="@drawable/rounded_edittext"
             android:hint="Brand"
+            android:inputType="textCapSentences"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingTop="5dp" />
@@ -64,6 +66,7 @@
             android:layout_toRightOf="@+id/brand_txt"
             android:background="@drawable/rounded_edittext"
             android:hint="Protein"
+            android:inputType="textCapSentences"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingTop="5dp" />
@@ -76,6 +79,7 @@
             android:layout_below="@+id/protein_value"
             android:layout_alignLeft="@+id/protein_value"
             android:layout_marginTop="10dp"
+            android:inputType="textCapSentences"
             android:background="@drawable/rounded_edittext"
             android:hint="Servings (in  cups, \n tablespoons, etc.)"
             android:paddingBottom="5dp"

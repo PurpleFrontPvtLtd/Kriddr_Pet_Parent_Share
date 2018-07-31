@@ -44,6 +44,7 @@
             android:fontFamily="@font/roboto_regular"
             android:layout_below="@+id/notes_text"
             android:layout_marginTop="10dp"
+            android:inputType="textCapSentences"
             android:maxLength="300"
             android:background="@drawable/rounded_edittext"
             android:hint="Enter notes"

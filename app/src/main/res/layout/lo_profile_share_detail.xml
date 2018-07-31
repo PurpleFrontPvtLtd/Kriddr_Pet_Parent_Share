@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:background="@color/silver_dark"
+
     android:layout_height="match_parent">
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical"
-
+    android:background="@color/silver_dark"
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:maxLines="1"
             android:hint="Enter name"
             android:layout_marginTop="5dp"
-
+            android:inputType="textCapWords"
             android:layout_alignLeft="@+id/txtName"
             android:layout_below="@+id/txtName"/>
         <TextView
@@ -88,7 +88,7 @@
             android:id="@+id/edtMob_No"
             android:paddingLeft="10dp"
             android:maxLines="1"
-            android:inputType="number"
+            android:inputType="phone"
             android:hint="Enter phone number"
             android:paddingRight="10dp"
             android:fontFamily="@font/roboto_regular"
@@ -109,6 +109,30 @@
             android:text="SEARCH"
             android:background="@drawable/btn_bg_round_gradient"
             android:layout_height="50dp" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/share_info_contr"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnSearch"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content">
+         <ImageView
+             android:layout_width="30dp"
+             android:id="@+id/img_ques"
+             android:layout_alignTop="@+id/info_txt"
+             android:layout_alignBottom="@+id/info_txt"
+             android:src="@drawable/question_mark"
+             android:layout_height="30dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/info_txt"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/img_ques"
+            android:text="What information will be shared"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
     </RelativeLayout>
     <TextView
         android:layout_width="wrap_content"

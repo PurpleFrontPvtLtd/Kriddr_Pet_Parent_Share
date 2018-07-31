@@ -347,10 +347,10 @@ public class CommentScreen extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "COMMENT_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "COMMENT_STATE", this); super.onSaveInstanceState(outState);
+
     }
 
     public void hide_fragment() {

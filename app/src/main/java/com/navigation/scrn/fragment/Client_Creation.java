@@ -17,6 +17,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
@@ -99,6 +100,7 @@ public class Client_Creation extends Fragment {
         edtServings = (EditText) rootView.findViewById(R.id.servings_value);
 
         day_month_year = (EditText) rootView.findViewById(R.id.day_month_year);
+        day_month_year.setInputType(InputType.TYPE_NULL);
         imgPet = (ImageView) rootView.findViewById(R.id.add_photo);
         btnSubmit = (Button) rootView.findViewById(R.id.btnSubmit);
 
@@ -215,10 +217,10 @@ public class Client_Creation extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "Client_CRT_STATE", this);
+        getActivity().getSupportFragmentManager().putFragment(outState, "Client_CRT_STATE", this); super.onSaveInstanceState(outState);
     }
 
 

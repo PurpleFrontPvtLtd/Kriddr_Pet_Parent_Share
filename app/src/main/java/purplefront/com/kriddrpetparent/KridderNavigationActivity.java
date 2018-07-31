@@ -29,6 +29,7 @@ import com.navigation.scrn.fragment.OwnFeedFragment;
 import com.navigation.scrn.fragment.ViewPublicFeedFragment;
 import com.navigation.scrn.fragment.View_Parent_Profile;
 import com.util.ActionBarUtil;
+import com.util.BottomNavigationViewHelper;
 import com.util.GenFragmentCall_Main;
 
 import java.util.List;
@@ -117,6 +118,7 @@ public class KridderNavigationActivity extends AppCompatActivity implements Inte
         actionBarUtilObj.setTitle("Feed");
         mTextMessage = (TextView) findViewById(R.id.message);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
         //BottomNavigationView bottomNavigationView = (BottomNavigationView) .findViewById(R.id.bottom_navigation);
       /*  ImageView img_mnu_ClientIcon = (ImageView) navigation.findViewById(R.id.navigation_client).findViewById(R.id.icon);
         img_mnu_ClientIcon.setMinimumWidth(100);

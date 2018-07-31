@@ -73,7 +73,7 @@ public interface ApiInterface {
 
 
     @POST("pet_follow.php")
-    Observable<Gen_Response_Model> _toFollow(@Query("pet_id") String pet_id, @Query("follower_id") String follower_ID);
+    Observable<Gen_Response_Model>  _toFollow(@Query("pet_id") String pet_id, @Query("follower_id") String follower_ID);
 
     @POST("pet_post_edit.php")
     @FormUrlEncoded
@@ -124,20 +124,20 @@ public interface ApiInterface {
     @POST("master_data.php")
     Observable<List<Document_categary_model>> _doc_categ(@Query("master_data") String mas_data);
 
-    @POST("pet_documents_creation.php")
+    @POST("temp_pet_documents_creation.php")
     @FormUrlEncoded
     Observable<Gen_Response_Model> _create_record(@Query("user_id") String UserId,@Query("pet_id") String PetId,@Query("name") String Name,@Query("document_category_id") String sel_catg_id,@Field("image") String Image,@Query("user_type") String UserType);
 
     @POST("business_parent_search.php")
-    Observable<SearchPersonResponseShare> _search_parent_business(@Query("name") String Name,@Query("owner_id") String Owner_id,@Query("pet_id") String PetId,@Query("mobile") String mobile);
+    Observable<SearchPersonResponseShare> _search_parent_business(@Query("owner_name") String owner,@Query("pet_name") String petname,@Query("name") String Name,@Query("owner_id") String Owner_id,@Query("pet_id") String PetId,@Query("mobile") String mobile);
 
 
 
     @POST("pet_profile_share_list.php")
     Observable<SharedListModel> _shared_list(@Query("pet_id") String pet_id, @Query("owner_id") String owner_id);
 
-    @POST("pet_profile_share.php")
-    Observable<Gen_Response_Model> _to_share_profile(@Query("pet_id") String pet_id, @Query("owner_id") String owner_id,@Query("user_id") String UserId,@Query("user_type") String user_type);
+    @POST( "pet_profile_share.php")
+    Observable<Gen_Response_Model> _to_share_profile(@Query("pet_id") String pet_id, @Query("owner_id") String owner_id,@Query("owner_name") String ownerName,@Query("pet_name") String PetName,@Query("user_id") String UserId,@Query("user_type") String user_type,@Query("user_mobile") String user_mobile);
 
     @POST("delete_pet_share_list.php")
     Observable<ResponseModel> _del_shared_contact(@Query("owner_id") String ownerId, @Query("share_id") String ShareId);
@@ -158,6 +158,9 @@ public interface ApiInterface {
 
     @POST("pet_parent_blocking.php")
     Observable<Gen_Response_Model> _block_user(@Query("owner_id") String OwnerId,@Query("blocked_by") String _block_by);
+
+    @POST("accept_or_deny.php")
+    Observable<Gen_Response_Model> _allow_or_deny(@Query("type") String type,@Query("reaction") String reaction,@Query("reaction_id") String reaction_id);
 
 
 }

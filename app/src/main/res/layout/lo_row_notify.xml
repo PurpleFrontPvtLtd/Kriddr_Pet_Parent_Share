@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:minHeight="80dp"
         android:padding="15dp"
+        android:id="@+id/rl_nfy_contr"
         android:layout_centerVertical="true"
         android:layout_height="wrap_content"
        >

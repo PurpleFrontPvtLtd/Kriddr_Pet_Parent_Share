@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/rounded_popup_window_whitebg">
+
+            <ImageView
+                android:id="@+id/image_close"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robofont"
+                android:src="@drawable/cancel"
+                android:textSize="25dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:id="@+id/scroll_info_contr"
+
+                android:layout_below="@+id/image_close"
+                android:padding="10dp">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="100dp">
+
+
+                    <TextView
+
+
+                        android:id="@+id/txtHdrPetParent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_horizontal"
+                        android:text="Sharing with a pet parent"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtInfoPetParnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtHdrPetParent"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_horizontal"
+                        android:text="By sharing your pet's profile with another pet parent, you are giving the pet parent view access to your pet's profile. The pet parent will also be able to post in your pet't profile and use Kriddr's AI feature for recording. They will not be able to re-share this profile with anyone else."
+                        android:textSize="16sp"
+
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtHdrPetBusiness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtInfoPetParnt"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_horizontal"
+                        android:text="Sharing with a pet business"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtHdrPetBusiness"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_horizontal"
+                        android:text="By sharing your pet's profile with a pet business, you are giving the business permission to send you invoices, and to view, add notes to your pet's profile. If changes are made to the profile, you will be notified and will be required to approve the updates before they are posted on your pet's profile."
+                        android:textSize="16sp"
+                        android:id="@+id/txtShrBusns"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </ScrollView>
+            <Button
+                android:id="@+id/btn_okay"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_alert_bg"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_below="@+id/scroll_info_contr"
+                android:text="Okay"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+</RelativeLayout>

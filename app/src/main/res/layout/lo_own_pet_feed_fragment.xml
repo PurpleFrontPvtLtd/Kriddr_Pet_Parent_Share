@@ -150,7 +150,7 @@
                         android:fontFamily="@font/roboto_regular"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="Sammy"
+
                         android:textColor="#EF6019"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -185,7 +185,7 @@
                 android:background="@drawable/rounded_edittext"
                 android:focusable="false"
                 android:fontFamily="@font/roboto_regular"
-                android:hint="Share what Sammy is up to"
+
                 android:paddingLeft="10dp"
                 android:textSize="18sp" />
         </RelativeLayout>
