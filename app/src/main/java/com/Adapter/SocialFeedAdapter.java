@@ -40,7 +40,8 @@ import java.util.List;
 
 import purplefront.com.kriddrpetparent.R;
 
-public class SocialFeedAdapter extends RecyclerView.Adapter<SocialFeedAdapter.SocialFeedHolder> {
+public class
+SocialFeedAdapter extends RecyclerView.Adapter<SocialFeedAdapter.SocialFeedHolder> {
 
     Context scrnContxt;
     List<PostDetailModel> postDetailModelListOBJ;

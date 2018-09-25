@@ -1,112 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@android:color/transparent"
     android:id="@+id/rl_dlg_contr"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-<RelativeLayout
-    android:id="@+id/scroll_pet_req_contr"
     android:layout_width="match_parent"
-    android:background="@drawable/rounded_popup_window_whitebg"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
 
-    android:layout_height="350dp">
-    <ImageView
-        android:id="@+id/image_close"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/robofont"
-        android:src="@drawable/cancel"
-        android:textSize="25dp" />
-    <ScrollView
-    android:layout_width="match_parent"
-    android:layout_below="@+id/image_close"
-        android:background="#ffffff"
-
-    android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/scroll_pet_req_contr"
         android:layout_width="match_parent"
-        android:paddingBottom="10dp"
-        android:background="#ffffff"
-        android:layout_height="match_parent">
+        android:layout_height="350dp"
 
+        android:background="@drawable/rounded_popup_window_whitebg">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/txt_main_hdr"
-            android:layout_marginLeft="10dp"
-            android:fontFamily="@font/roboto_regular"
-            android:textSize="18sp"
-            android:textColor="#dc4a2b"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/txtMsgDtl"
-            android:fontFamily="@font/roboto_regular"
-            android:textSize="18sp"
-            android:gravity="center_horizontal"
-            android:padding="10dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_below="@+id/txt_main_hdr"
-            android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content" />
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/imgPet"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_below="@+id/txtMsgDtl"
-                android:layout_marginTop="5dp"
-                android:layout_centerHorizontal="true"
+        <ImageView
+            android:id="@+id/image_close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/robofont"
+            android:src="@drawable/cancel"
+            android:textSize="25dp" />
 
-                ></com.facebook.drawee.view.SimpleDraweeView>
-
-
-
-        <RelativeLayout
-            android:id="@+id/profile_details_layout"
-            android:layout_width="250dp"
-            android:layout_height="80dp"
-            android:padding="10dp"
-            android:layout_below="@+id/imgPet"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-20dp"
-            android:background="#445259">
-
-            <TextView
-                android:id="@+id/profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/profile_dob"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/profile_name"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/food_main_layout"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/profile_details_layout"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/image_close"
 
-            android:visibility="visible">
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:paddingBottom="10dp">
 
 
+                <TextView
+                    android:id="@+id/txt_main_hdr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="#dc4a2b"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtMsgDtl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_main_hdr"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:textSize="18sp" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgPet"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/txtMsgDtl"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+
+                    ></com.facebook.drawee.view.SimpleDraweeView>
+
+
+                <RelativeLayout
+                    android:id="@+id/profile_details_layout"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/imgPet"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-20dp"
+                    android:background="#445259"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/profile_dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/profile_name"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/food_main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/profile_details_layout"
+                    android:layout_marginTop="10dp"
+
+                    android:visibility="visible">
 
 
                     <RelativeLayout
@@ -125,7 +129,6 @@
                             android:text="FOOD PREFERENCES"
                             android:textColor="#dc4a2b"
                             android:textSize="18sp" />
-
 
 
                     </RelativeLayout>
@@ -227,42 +230,41 @@
                     </RelativeLayout>
 
 
+                </RelativeLayout>
 
 
-
-
-        </RelativeLayout>
-
-
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
-</ScrollView>
-</RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:weightSum="2"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/scroll_pet_req_contr"
         android:orientation="horizontal"
-        android:layout_height="wrap_content">
-    <Button
-        android:layout_width="wrap_content"
-        android:id="@+id/btn_allow"
-        android:layout_weight="1"
-        android:text="Approve"
-        android:fontFamily="@font/roboto_regular"
-        android:textColor="#ffffff"
-        android:background="@drawable/gradient_left_btn_bg"
+        android:weightSum="2">
 
-        android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/btn_allow"
             android:layout_width="wrap_content"
-            android:id="@+id/btn_deny"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/gradient_left_btn_bg"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Approve"
+
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_deny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:background="@drawable/gradient_right_btn_bg"
+            android:fontFamily="@font/roboto_regular"
             android:text="Deny"
 
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="#ffffff"
-            android:background="@drawable/gradient_right_btn_bg"
-
-            android:layout_height="wrap_content" />
+            android:textColor="#ffffff" />
     </LinearLayout>
 </RelativeLayout>

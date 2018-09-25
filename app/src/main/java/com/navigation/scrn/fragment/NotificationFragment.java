@@ -43,9 +43,10 @@ public class NotificationFragment extends Fragment implements NotifyAdapter.Ntfy
     View rootView;
     RecyclerView recycle_notify;
     ActionBarUtil actionBarUtilObj;
+    InterfaceUserModel iface_usrModel_obj;
     String owner_id;
     String petPos;
-    InterfaceUserModel iface_usrModel_obj;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -146,6 +147,7 @@ public class NotificationFragment extends Fragment implements NotifyAdapter.Ntfy
                         @Override
                         public void onNext(NotificationResponseModel gen_response_model) {
                             dialog.dismiss();
+                            recycle_notify.removeAllViewsInLayout();
                             if (gen_response_model.getResponse().get(0).getNotification().equalsIgnoreCase("empty")) {
 
                             } else {
@@ -153,6 +155,7 @@ public class NotificationFragment extends Fragment implements NotifyAdapter.Ntfy
 
 
                             }
+
                         }
 
                         @Override

@@ -11,6 +11,7 @@ import com.Model.PetDetailsModel;
 import com.Model.Pet_Activity_Model;
 import com.Model.Pet_Search_Model;
 import com.Model.PostResponseModel;
+import com.Model.Res_FoundQues_Model;
 import com.Model.ResponseModel;
 import com.Model.SearchPersonResponseShare;
 import com.Model.SharedListModel;
@@ -140,10 +141,13 @@ public interface ApiInterface {
     Observable<Gen_Response_Model> _to_share_profile(@Query("pet_id") String pet_id, @Query("owner_id") String owner_id,@Query("owner_name") String ownerName,@Query("pet_name") String PetName,@Query("user_id") String UserId,@Query("user_type") String user_type,@Query("user_mobile") String user_mobile);
 
     @POST("delete_pet_share_list.php")
-    Observable<ResponseModel> _del_shared_contact(@Query("owner_id") String ownerId, @Query("share_id") String ShareId);
+    Observable<ResponseModel> _del_shared_contact(@Query("owner_id") String ownerId, @Query("share_id") String ShareId,@Query("pet_type") String PetType);
 
     @POST("owner_pet_notification.php")
     Observable<NotificationResponseModel> _nfy_list(@Query("owner_id") String owner_id);
+
+    @POST("vetx_questions_list.php")
+    Observable<Res_FoundQues_Model> _find_questions(@Query("owner_id") String owner_id, @Query("search_key") String SrchKey, @Query("keyword") String filter, @Query("limit") String limitVal);
 
     /*@GET
     Call<ResponseBody> fetchImage(@Url String url);*/

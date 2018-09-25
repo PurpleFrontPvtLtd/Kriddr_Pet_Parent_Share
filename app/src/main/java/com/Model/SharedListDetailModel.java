@@ -2,7 +2,21 @@ package com.Model;
 
 public class SharedListDetailModel {
 
-    String share_id,name,mobile,type,photo;
+    String share_id;
+    String name;
+    String mobile;
+    String type;
+    String photo;
+
+    public String getPet_type() {
+        return pet_type;
+    }
+
+    public void setPet_type(String pet_type) {
+        this.pet_type = pet_type;
+    }
+
+    String pet_type;
 
     public String getPhoto() {
         return photo;

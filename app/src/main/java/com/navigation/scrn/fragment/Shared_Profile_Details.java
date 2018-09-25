@@ -75,10 +75,8 @@ public class Shared_Profile_Details extends Fragment implements SharedListAdapte
 
         InterfaceUserModel interfaceUserModel;
 
-        if (context instanceof FragmentCallInterface) {
-            FragmentCallInterface callInterface = (FragmentCallInterface) context;
-            fragmentCall_mainObj = callInterface.Get_GenFragCallMainObj();
-        }
+
+
         if (context instanceof InterfaceActionBarUtil) {
             actionBarUtilObj = ((InterfaceActionBarUtil) context).getActionBarUtilObj();
 
@@ -254,7 +252,8 @@ public class Shared_Profile_Details extends Fragment implements SharedListAdapte
 
 
         //Save the fragment's instance
-        getActivity().getSupportFragmentManager().putFragment(outState, "View_Public_STATE", this);super.onSaveInstanceState(outState);
+        getActivity().getSupportFragmentManager().putFragment(outState, "View_Public_STATE", this);
+        super.onSaveInstanceState(outState);
     }
 
 
@@ -306,7 +305,7 @@ public class Shared_Profile_Details extends Fragment implements SharedListAdapte
         recycle_shrdWith.setAdapter(adapter);
     }
 
-    public void show_dialog(final String ShareId) {
+    public void show_dialog(final String ShareId, final String Pet_Type) {
         AlertDialog.Builder alrtDlgBldr = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
@@ -314,12 +313,12 @@ public class Shared_Profile_Details extends Fragment implements SharedListAdapte
         ImageView image_close = (ImageView) dialogView.findViewById(R.id.image_close);
         Button btn_okay = (Button) dialogView.findViewById(R.id.btn_cnfrm);
         Button btn_cancel = (Button) dialogView.findViewById(R.id.btn_cancel);
-        TextView txtMsg=(TextView)dialogView.findViewById(R.id.txtMsg);
+        TextView txtMsg = (TextView) dialogView.findViewById(R.id.txtMsg);
         txtMsg.setText("Are you sure want to delete?");
         btn_okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                del_service(ShareId);
+                del_service(ShareId, Pet_Type);
             }
         });
         image_close.setOnClickListener(new View.OnClickListener() {
@@ -342,11 +341,11 @@ public class Shared_Profile_Details extends Fragment implements SharedListAdapte
     }
 
     @Override
-    public void on_deleteSharedList(String ShareId) {
-       show_dialog(ShareId);
+    public void on_deleteSharedList(String ShareId, String Pet_type) {
+        show_dialog(ShareId, Pet_type);
     }
 
-    public void del_service(String ShareId){
+    public void del_service(String ShareId, String Pet_Type) {
         if (NetworkConnection.isOnline(getContext())) {
 
 
@@ -357,7 +356,7 @@ public class Shared_Profile_Details extends Fragment implements SharedListAdapte
             ApiInterface requestInterface = ApiClient.getClient();
             CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
-            mCompositeDisposable.add(requestInterface._del_shared_contact(userModel.getOwner_id(), ShareId)
+            mCompositeDisposable.add(requestInterface._del_shared_contact(userModel.getOwner_id(), ShareId, Pet_Type)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribeWith(new DisposableObserver<ResponseModel>() {

@@ -295,25 +295,39 @@ public class NotifyAdapter extends RecyclerView.Adapter<NotifyAdapter.MyViewHold
             profile_name.setText(variable_modelList.get(0).getPet_name());
             dob.setText("DOB:" + variable_modelList.get(0).getPet_dob());
             imgPet.setZ(20.0f);
-            GenericDraweeHierarchyBuilder builder =
-                    new GenericDraweeHierarchyBuilder(scrnContxt.getResources());
-            builder.setProgressBarImage(R.drawable.loader);
-            builder.setRetryImage(R.drawable.retry);
-            builder.setProgressBarImage(
-                    new AutoRotateDrawable(builder.getProgressBarImage(), 1000, true));
-            builder.setProgressBarImageScaleType(ScalingUtils.ScaleType.CENTER_INSIDE);
-            GenericDraweeHierarchy hierarchy = builder
-                    .setFadeDuration(100)
-                    .build();
+            if(notificationModel.getPhoto().trim().equalsIgnoreCase("")){
+                Uri uri = new Uri.Builder()
+                        .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                        .path(String.valueOf(R.drawable.dogandcat))
+                        .build();
+                final ImageRequest imageRequest2 =
+                        ImageRequestBuilder.newBuilderWithSource(uri)
+                                .setResizeOptions(circle_resize_opts)
+                                .build();
+                imgPet.setImageRequest(imageRequest2);
+                imgPet.getHierarchy().setRoundingParams(roundingParams);
+            }
+            else {
+                GenericDraweeHierarchyBuilder builder =
+                        new GenericDraweeHierarchyBuilder(scrnContxt.getResources());
+                builder.setProgressBarImage(R.drawable.loader);
+                builder.setRetryImage(R.drawable.retry);
+                builder.setProgressBarImage(
+                        new AutoRotateDrawable(builder.getProgressBarImage(), 1000, true));
+                builder.setProgressBarImageScaleType(ScalingUtils.ScaleType.CENTER_INSIDE);
+                GenericDraweeHierarchy hierarchy = builder
+                        .setFadeDuration(100)
+                        .build();
 
-            imgPet.setHierarchy(hierarchy);
+                imgPet.setHierarchy(hierarchy);
 
-            final ImageRequest imageRequest =
-                    ImageRequestBuilder.newBuilderWithSource(Uri.parse(notificationModel.getPhoto()))
-                            .setResizeOptions(circle_resize_opts)
-                            .build();
-            imgPet.setImageRequest(imageRequest);
-            imgPet.getHierarchy().setRoundingParams(roundingParams);
+                final ImageRequest imageRequest =
+                        ImageRequestBuilder.newBuilderWithSource(Uri.parse(notificationModel.getPhoto()))
+                                .setResizeOptions(circle_resize_opts)
+                                .build();
+                imgPet.setImageRequest(imageRequest);
+                imgPet.getHierarchy().setRoundingParams(roundingParams);
+            }
         }
 
         btn_approve.setOnClickListener(new View.OnClickListener() {
@@ -385,7 +399,7 @@ public class NotifyAdapter extends RecyclerView.Adapter<NotifyAdapter.MyViewHold
                 txtVal_Pref_cont.setText("Text message");
             }
             else
-            txtVal_Pref_cont.setText(variable_models.get(0).getPreferred_contact());
+            txtVal_Pref_cont.setText("Email");
         }
         if (variable_models.get(0).getDob().equalsIgnoreCase("empty")) {
             txtDob_val.setVisibility(View.GONE);

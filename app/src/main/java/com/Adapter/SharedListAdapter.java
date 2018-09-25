@@ -128,7 +128,7 @@ public class SharedListAdapter extends RecyclerView.Adapter<SharedListAdapter.My
         holder.img_Del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mListener.on_deleteSharedList(sharedListDetailModel.getShare_id());
+               mListener.on_deleteSharedList(sharedListDetailModel.getShare_id(),sharedListDetailModel.getPet_type());
             }
         });
         holder.btnShare.setVisibility(View.GONE);
@@ -162,7 +162,7 @@ public class SharedListAdapter extends RecyclerView.Adapter<SharedListAdapter.My
         }
     }
     public interface delete_clicked_Interface{
-       public void on_deleteSharedList(String shareId);
+       public void on_deleteSharedList(String shareId,String Pet_Type);
     }
 
 

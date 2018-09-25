@@ -11,11 +11,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "http://13.71.127.81/dev/kriddr/web_service/home/";
-   // public static final String BASE_URL = "http://18.188.194.43/kriddr/web_service/home/";
+
+    public static final String BASE_URL = "http://18.188.194.43/kriddr/web_service/home/";
 
     private static Retrofit retrofit = null;
     private static ApiInterface requestInterface;
+
 
     public static ApiInterface getClient() {
         /*if (retrofit==null) {

@@ -5,9 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +28,7 @@ import com.iface.InterfaceUserModel;
 import com.navigation.scrn.fragment.ActivityFragment;
 
 import com.navigation.scrn.fragment.OwnFeedFragment;
+import com.navigation.scrn.fragment.VetX_Fragment;
 import com.navigation.scrn.fragment.ViewPublicFeedFragment;
 import com.navigation.scrn.fragment.View_Parent_Profile;
 import com.util.ActionBarUtil;
@@ -78,7 +81,9 @@ public class KridderNavigationActivity extends AppCompatActivity implements Inte
                     //  mTextMessage.setText(R.string.title_dashboard);
                     fragmentCall_mainObj.Fragment_call(null,new ActivityFragment(), "frag_act", null);
                     return true;
-
+                /*case R.id.navigation_Q_A:
+                    fragmentCall_mainObj.Fragment_call(null,new VetX_Fragment(), "frag_vetx", null);
+                    return true;*/
 
                 case R.id.navigation_profile:
                     fragmentCall_mainObj.Fragment_call(null,new View_Parent_Profile(), "view_parent", null);
@@ -106,8 +111,22 @@ public class KridderNavigationActivity extends AppCompatActivity implements Inte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kridder_navigation);
 
+        String frag_tag;
+        if (savedInstanceState != null) {
+            //Restore the fragment's instance
+            Fragment saved_mContent = getSupportFragmentManager().getFragment(savedInstanceState, "acty_Frg_saved");
 
+            if(saved_mContent!=null) {
+                Log.e("Fragment","Restored");
+                frag_tag=savedInstanceState.getString("frag_tag");
+//                Toast.makeText(this,"Fragment Reload from Activity",Toast.LENGTH_LONG).show();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, saved_mContent, frag_tag);
+                fragmentTransaction.addToBackStack(frag_tag);
+                fragmentTransaction.commit();
+            }
 
+        }
 
         int ScreenFromVal = getIntent().getIntExtra(MainActivity.SCREEN_FROM_TAG, -1);
         userModelObj = getIntent().getParcelableExtra(USER_MODEL_TAG);
@@ -157,6 +176,19 @@ public class KridderNavigationActivity extends AppCompatActivity implements Inte
         // navigation.getMenu().getItem(2).setChecked(true);
        // throw null;
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+
+        //Save the fragment's instance
+        String tag = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
+        Fragment mContent= getSupportFragmentManager().findFragmentByTag(tag);
+        outState.putString("frag_tag",tag);
+        getSupportFragmentManager().putFragment(outState, "acty_Frg_saved", mContent);
+        super.onSaveInstanceState(outState);
+    }
+
 
     public  void global_state(){
         actionBarUtilObj = new ActionBarUtil(this);

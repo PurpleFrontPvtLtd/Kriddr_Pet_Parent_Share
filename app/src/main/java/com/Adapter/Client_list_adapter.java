@@ -145,7 +145,8 @@ public class Client_list_adapter extends RecyclerView.Adapter<Client_list_adapte
     }
 
     @Override
-    public long getItemId(int position) {
+    public long
+    getItemId(int position) {
         return position;
     }
 

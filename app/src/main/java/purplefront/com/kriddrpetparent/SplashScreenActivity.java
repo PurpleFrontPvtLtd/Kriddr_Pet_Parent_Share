@@ -87,7 +87,7 @@ public class SplashScreenActivity extends Activity {
                         SplashScreenActivity.this.finish();
                         startActivity(intent);
                         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                    }
+                     }
 
 
                 } catch (SQLException e) {
